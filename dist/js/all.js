@@ -1,3 +1,2 @@
-console.log("teste");
-console.log("object");
+console.log("testanteZAfkasnf");
 //# sourceMappingURL=all.js.map
