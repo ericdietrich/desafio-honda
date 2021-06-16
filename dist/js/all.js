@@ -1,2 +1,4 @@
-console.log("testanteZAfkasnf");
+
+
+console.log("te");
 //# sourceMappingURL=all.js.map
