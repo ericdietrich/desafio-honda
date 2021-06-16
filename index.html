@@ -20,21 +20,29 @@
 </head>
 <body>
 
+  <nav class="nav">
+    <div class="container">
+      <div class="links">
+        <a href="#">
+          <img src="dist/img/svg/home-button.svg" alt="">
+          <span>Ir para o Portal Banzai</span>
+        </a>
+        <a href="#">
+          <img src="dist/img/svg/facebook-placeholder-for-locate-places-on-maps.svg" alt="">
+          <span>Encontre uma concessionária</span>
+          
+        </a>
+        <a href="#">
+          <img src="dist/img/svg/black-envelope.svg" alt="">
+          <span>Fale Conosco</span>
+          
+        </a>
+      </div>
+
+    </div>
+  </nav>
   <header class="header">
-    <nav class="nav">
-      <a href="#">
-        <img src="dist/img/svg/home-button.svg" alt="">
-        Ir para o Portal Banzai
-      </a>
-      <a href="#">
-        <img src="dist/img/svg/facebook-placeholder.svg" alt="">
-        Encontre uma concessionária
-      </a>
-      <a href="#">
-        <img src="dist/img/svg/black-envelope.svg" alt="">
-        Fale Conosco
-      </a>
-    </nav>
+    
     <div>
       <img src="dist/img/logos/logo.webp" alt="">
       <div>
@@ -47,6 +55,34 @@
   <section class="main-banner">
     <img src="dist/img/banner/main.webp" alt="">
   </section>
+
+  <div class="contact">
+    <div>
+      <img src="dist/img/svg/phone.svg" alt="">
+      <div>
+        <p>Solicitar um</p>
+        <p>Contato</p>
+      </div>
+    </div>
+    <form action="post">
+      <input type="text" name="name" id="name" placeholder="Nome">
+      <input type="email" name="email" id="email" placeholder="E-mail">
+      <input type="text" name="telefone" id="telefone" placeholder="Telefone">
+      <select name="hour" id="hour" value="Escolha o horário">
+        <option value="" selected disabled>Escolha o horário</option>
+        <option value="9:00 - 10:00">9:00 - 10:00</option>
+        <option value="11:00 - 12:00">11:00 - 12:00</option>
+        <option value="14:00 - 115:00">14:00 - 15:00</option>
+      </select>
+      <select name="local" id="local">
+        <option value="" selected disabled>Escolha a unidade</option>
+        <option value="">Alfa</option>
+        <option value="">Beta</option>
+        <option value="">Gama</option>
+      </select>
+    </form>
+    <button type="submit">Agendar Test Drive</button>
+  </div>
 
   <section>
     <h1>A EMOÇÃO DE DIRIGIR LEVA VOCÊ MAIS LONGE</h1>
@@ -150,5 +186,6 @@
 
 <!-- Project Javascript -->
 <script src="dist/js/all.js"></script>
+
 </body>
 </html>

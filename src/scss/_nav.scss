@@ -1,0 +1,50 @@
+.nav {
+  background: $graybg;
+  padding: 5px 0;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  .links {
+    display: flex;
+    align-items: center;
+    a {
+      img {
+        vertical-align: middle;
+      }
+      span {
+        margin-left: 10px;
+        font-size: 1.2rem;
+        color: $graytext;
+      }
+      & + a {
+        margin-left: 20px;
+      }
+      &:first-child {
+        margin-right: auto;
+      }
+    }
+  }
+  @media (max-width: $small) {
+    & {
+      padding: 10px 0;
+      .links {
+        justify-content: space-around;
+        a {
+          img {
+            height: 25px;
+            width: auto;
+          }
+          span {
+            display: none;
+          }
+          & + a {
+            margin-left: 0;
+          }
+          &:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

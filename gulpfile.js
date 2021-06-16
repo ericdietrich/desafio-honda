@@ -8,11 +8,13 @@ const browsersync = require("browser-sync").create();
 const concat = require("gulp-concat");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
+var cachebust = require("gulp-cache-bust");
 
 // AUTOMAÇÃO DA TAREFA DO SCSS EM CSS
 function scssTask() {
   return src("src/scss/app.scss", { sourcemaps: true })
     .pipe(sass())
+    .pipe(cachebust({ type: "timestamp" }))
     .pipe(postcss([cssnano()]))
     .pipe(concat("style.css"))
     .pipe(dest("dist/css", { sourcemaps: "." }))
@@ -33,9 +35,10 @@ function scssTask() {
 //}
 
 // AUTOMAÇÃO DAS LIBS DO JAVASCRIPT, TODAS COMPILADAS NUM ARQUIVO SÓ ALL.JS
-function jsLibTask() {
+function jsTask() {
   return src("src/js/**/*.js", { sourcemaps: true })
     .pipe(terser())
+    .pipe(cachebust({ type: "timestamp" }))
     .pipe(concat("all.js"))
     .pipe(dest("dist/js", { sourcemaps: "." }))
     .pipe(browsersync.stream());
@@ -65,16 +68,28 @@ function watchTask() {
   watch("*.css", browsersyncReload);
   watch(
     ["src/scss/**/*.scss", "src/js/**/*.js"],
-    series(scssTask, browsersyncReload)
+    series(scssTask, jsTask, browsersyncReload)
   );
 }
+
+function cacheBust() {
+  gulp
+    .src("dist/*/*.html")
+    .pipe(
+      cachebust({
+        type: "timestamp",
+      })
+    )
+    .pipe(gulp.dest("dist"));
+}
+
 //Tarefa padrão do gulp
 exports.default = series(
   scssTask,
   // cssTask,
   //jsTask,
-  jsLibTask,
-  imageMin,
+  jsTask,
+  //imageMin,
   browsersyncServe,
   watchTask
 );
