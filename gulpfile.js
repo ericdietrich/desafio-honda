@@ -25,12 +25,12 @@ function scssTask() {
 // }
 
 // AUTOMAÇÃO DO JAVASCRIPT
-function jsTask() {
-  return src("src/js/**/*.js", { sourcemaps: true })
-    .pipe(terser())
-    .pipe(dest("dist/js", { sourcemaps: "." }))
-    .pipe(browsersync.stream());
-}
+//function jsTask() {
+//  return src("src/js/**/*.js", { sourcemaps: true })
+//   .pipe(terser())
+//    .pipe(dest("dist/js", { sourcemaps: "." }))
+//    .pipe(browsersync.stream());
+//}
 
 // AUTOMAÇÃO DAS LIBS DO JAVASCRIPT, TODAS COMPILADAS NUM ARQUIVO SÓ ALL.JS
 function jsLibTask() {
@@ -45,7 +45,7 @@ function imageMin() {
   return src("src/img/**/*")
     .pipe(imagemin())
     .pipe(webp())
-    .pipe(dest("dist/images"));
+    .pipe(dest("dist/img"));
 }
 //browser SYNC auto reload do navegador apos salvar
 function browsersyncServe(cb) {
@@ -63,22 +63,16 @@ function watchTask() {
   //Ao notar qualquer mudança no HTML, executar função browser Sync Reload
   watch("*.html", browsersyncReload);
   watch("*.css", browsersyncReload);
-  watch("*.php", browsersyncReload);
   watch(
-    [
-      "src/scss/**/*.scss",
-      "src/app/**/*.js",
-      "src/lib/**/*.js",
-      "css/**/*.css",
-    ],
-    series(scssTask, jsTask, browsersyncReload)
+    ["src/scss/**/*.scss", "src/js/**/*.js"],
+    series(scssTask, browsersyncReload)
   );
 }
 //Tarefa padrão do gulp
 exports.default = series(
   scssTask,
   // cssTask,
-  jsTask,
+  //jsTask,
   jsLibTask,
   imageMin,
   browsersyncServe,
