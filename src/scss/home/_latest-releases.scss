@@ -1,0 +1,71 @@
+.latest-releases {
+  margin-bottom: 30px;
+  &-title {
+    p {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  &-cars {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    .car {
+      border: 1px solid #d5d5d5;
+      padding: 20px;
+      &-inner {
+        img {
+          width: 100%;
+        }
+        .show-more {
+          display: none;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+  }
+  @media (max-width: $medium) {
+    & {
+      &-cars {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        .car {
+          border: none;
+          max-width: 400px;
+          width: 100%;
+          p {
+            display: none;
+          }
+          &-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border: 1px solid #d5d5d5;
+            margin-bottom: 10px;
+            img {
+              width: 60%;
+            }
+            .show-more {
+              display: block;
+              cursor: pointer;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $small) {
+    &-title {
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

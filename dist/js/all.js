@@ -1,5 +1,3 @@
-console.log("et"),console.log("object");
-
-
-function createSlick(){$(".accessories-slick").slick({dots:!0,infinite:!1,speed:300,slidesToShow:4,slidesToScroll:4,responsive:[{breakpoint:1024,settings:{slidesToShow:3,slidesToScroll:3,infinite:!0,dots:!0}},{breakpoint:600,settings:{slidesToShow:2,slidesToScroll:2}},{breakpoint:480,settings:{slidesToShow:1,slidesToScroll:1}}]})}$(document).on("ready",createSlick);
+function handleCollapse(){$(window).width()>992&&$(".collapse-element").each(((e,t)=>{$(t).addClass("show")})),$(document).on("click",".show-more",(function(){"true"===$(this).attr("aria-expanded")?$(this).css("transform","rotate(180deg)"):$(this).css("transform","rotate(0deg)")}))}$(document).on("ready",handleCollapse());
+function createSlick(){$(".accessories-slick").slick({dots:!0,infinite:!1,speed:300,slidesToShow:3,slidesToScroll:4,responsive:[{breakpoint:768,settings:{slidesToShow:2,slidesToScroll:2}},{breakpoint:576,settings:{slidesToShow:1,slidesToScroll:1}}]})}$(document).on("ready",createSlick());
 //# sourceMappingURL=all.js.map

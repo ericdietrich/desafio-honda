@@ -1,0 +1,19 @@
+.accessories {
+  margin-bottom: 40px;
+  .accessories-item {
+    margin: 0 10px;
+    display: block;
+    img {
+      padding: 3px;
+      border: 1px solid #d5d5d5;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    p {
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
