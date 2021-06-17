@@ -4,7 +4,8 @@
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  .links {
+  z-index: 15;
+  &-links {
     display: flex;
     align-items: center;
     a {
@@ -27,7 +28,7 @@
   @media (max-width: $small) {
     & {
       padding: 10px 0;
-      .links {
+      &-links {
         justify-content: space-around;
         a {
           img {

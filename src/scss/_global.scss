@@ -1,9 +1,26 @@
 html {
+  * {
+    box-sizing: border-box;
+  }
+
   font-size: 10px;
   font-family: $foundry;
   a,
   a:hover {
     text-decoration: none;
+    color: $black;
+  }
+  img {
+    max-width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 0;
+    padding: 0;
     color: $black;
   }
 }

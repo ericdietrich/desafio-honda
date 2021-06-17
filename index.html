@@ -9,6 +9,10 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+  <!-- Slick -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Project Styles -->
   <link rel="stylesheet" href="dist/css/style.css">
 
@@ -22,7 +26,7 @@
 
   <nav class="nav">
     <div class="container">
-      <div class="links">
+      <div class="nav-links">
         <a href="#">
           <img src="dist/img/svg/home-button.svg" alt="">
           <span>Ir para o Portal Banzai</span>
@@ -30,83 +34,112 @@
         <a href="#">
           <img src="dist/img/svg/facebook-placeholder-for-locate-places-on-maps.svg" alt="">
           <span>Encontre uma concessionária</span>
-          
         </a>
         <a href="#">
           <img src="dist/img/svg/black-envelope.svg" alt="">
           <span>Fale Conosco</span>
-          
         </a>
       </div>
-
     </div>
   </nav>
+
   <header class="header">
-    
-    <div>
-      <img src="dist/img/logos/logo.webp" alt="">
-      <div>
-        <p>central de atendimento</p>
-        <p>(31) 3123-1234</p>
+    <div class="container">
+      <div class="header-content">
+        <img src="dist/img/logos/logo.webp" alt="">
+        <div class="call-center">
+          <p class="call-center-text">central de atendimento</p>
+          <p class="call-center-phone">(31) 3123-1234</p>
+        </div>
       </div>
     </div>
   </header>
 
   <section class="main-banner">
-    <img src="dist/img/banner/main.webp" alt="">
-  </section>
-
-  <div class="contact">
-    <div>
-      <img src="dist/img/svg/phone.svg" alt="">
-      <div>
-        <p>Solicitar um</p>
-        <p>Contato</p>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- desktop -->
+        <div class="main-banner-desktop" style="background-image: url('dist/img/banner/main.webp')">
+          <img class="logo" src="dist/img/logos/quatro-rodas-removebg-preview.webp" alt="">
+        </div>
+        <!-- mobile -->
+        <div class="main-banner-mobile">
+          <img src="dist/img/banner/main-banner-mobile.webp" alt="">
+          <img src="dist/img/banner/logo-banner-mobile.svg" alt="">
+        </div>
       </div>
     </div>
-    <form action="post">
-      <input type="text" name="name" id="name" placeholder="Nome">
-      <input type="email" name="email" id="email" placeholder="E-mail">
-      <input type="text" name="telefone" id="telefone" placeholder="Telefone">
-      <select name="hour" id="hour" value="Escolha o horário">
-        <option value="" selected disabled>Escolha o horário</option>
-        <option value="9:00 - 10:00">9:00 - 10:00</option>
-        <option value="11:00 - 12:00">11:00 - 12:00</option>
-        <option value="14:00 - 115:00">14:00 - 15:00</option>
-      </select>
-      <select name="local" id="local">
-        <option value="" selected disabled>Escolha a unidade</option>
-        <option value="">Alfa</option>
-        <option value="">Beta</option>
-        <option value="">Gama</option>
-      </select>
-    </form>
-    <button type="submit">Agendar Test Drive</button>
-  </div>
+  </section>
 
-  <section>
-    <h1>A EMOÇÃO DE DIRIGIR LEVA VOCÊ MAIS LONGE</h1>
-    <div>
-      <div>
-        <img src="dist/img/carros/carro-1.webp" alt="">
-        <img src="dist/img/carros/carro-2.webp" alt="">
-        <img src="dist/img/carros/carro-3.webp" alt="">
+  <section class="container-fluid">
+    <div class="contact">
+      <div class="contact-header element">
+        <img class="element-icon" src="dist/img/svg/phone.svg" alt="">
+        <div class="">
+          <p class="element-title-top">Solicitar um</p>
+          <p class="element-title-bottom">Contato</p>
+        </div>
       </div>
-      <div>
-        <img src="dist/img/banner/juntosi.webp" alt="">
+      <form class="contact-form" action="post">
+        <input type="text" name="name" id="name" placeholder="Nome">
+        <input type="email" name="email" id="email" placeholder="E-mail">
+        <input type="text" name="telefone" id="telefone" placeholder="Telefone">
+        <select name="hour" id="hour" value="Escolha o horário">
+          <option value="" selected disabled>Escolha o horário</option>
+          <option value="9:00 - 10:00">9:00 - 10:00</option>
+          <option value="11:00 - 12:00">11:00 - 12:00</option>
+          <option value="14:00 - 115:00">14:00 - 15:00</option>
+        </select>
+        <select name="local" id="local">
+          <option value="" selected disabled>Escolha a unidade</option>
+          <option value="">Alfa</option>
+          <option value="">Beta</option>
+          <option value="">Gama</option>
+        </select>
+      </form>
+      <button class="green-button" type="submit">Agendar Test Drive</button>
+    </div>
+  </section>
+
+  <section class="emotion">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 col-12">
+          <h1>A EMOÇÃO DE DIRIGIR LEVA VOCÊ MAIS LONGE</h1>
+          <div class="emotion-content">
+            <div class="emotion-content-list">
+              <img src="dist/img/carros/carro-1.webp" alt="">
+              <img src="dist/img/carros/carro-2.webp" alt="">
+              <img src="dist/img/carros/carro-3.webp" alt="">
+            </div>
+            <div>
+              <img src="dist/img/banner/juntosi.webp" alt="">
+            </div>
+          </div>
+          <p class="emotion-text">O novo Civic Geração 10 traz um design único mudando a categoria de sedãs para sempre. Ele garante a melhor dirigibilidade com o máximo em sofisticação e conforto, atribuído por seu design interno e diferenciada ergonomia.</p>
+
+        </div>
       </div>
     </div>
-    <p>O novo Civic Geração 10 traz um design único mudando a categoria de sedãs para sempre. Ele garante a melhor dirigibilidade com o máximo em sofisticação e conforto, atribuído por seu design interno e diferenciada ergonomia.</p>
+  </section>
+
+  <section class="inside-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="inside-banner-background" style="background-image: url('dist/img/banner/banner-interna-civic.webp')">
+          <div class="container">
+            <div class="row">
+              <h1>PREPARE-SE PARA ALGO REALMENTE NOVO</h1>
+              <p>O Novo Civic Geração 10 vem completo de série. Conheça a versão perfeita para você.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section>
-    <img src="dist/img/banner/interna.webp" alt="">
-    <h1>PREPARE-SE PARA ALGO REALMENTE NOVO</h1>
-    <p>O Novo Civic Geração 10 vem completo de série. Conheça a versão perfeita para você.</p>
-  </section>
-
-  <section>
-    <div>
+    <div class="accessories-slick">
       <div>
         <img src="dist/img/acessorios/direcao.webp" alt="">
         <h2>Direção com Assistência</h2>
@@ -183,6 +216,9 @@
 <!-- jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<!-- Slick -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Project Javascript -->
 <script src="dist/js/all.js"></script>

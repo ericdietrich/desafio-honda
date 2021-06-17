@@ -1,0 +1,36 @@
+.inside-banner {
+  .inside-banner-background {
+    height: 800px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    & > div {
+      position: relative;
+      bottom: 0;
+      h1,
+      p {
+        color: $white;
+      }
+      p {
+        font-size: 1.8rem;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @media (max-width: $large) {
+    & {
+      .inside-banner-background {
+        height: 600px;
+      }
+    }
+  }
+  @media (max-width: $small) {
+    & {
+      .inside-banner-background {
+        height: 400px;
+      }
+    }
+  }
+}

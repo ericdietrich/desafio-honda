@@ -1,0 +1,140 @@
+/* central de atendimento */
+.call-center {
+  font-style: italic;
+  &-text {
+    font-size: 1.6rem;
+    color: $graytextsecondary;
+    text-transform: uppercase;
+    margin-bottom: -10px;
+    margin-top: 10px;
+  }
+  &-phone {
+    font-size: 2.6rem;
+    color: $red;
+  }
+}
+
+/* elemento titulo com icone lateral */
+.element {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &-icon {
+    height: 40px;
+    width: 40px;
+  }
+  &-title-top {
+    color: $black;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: -5px;
+  }
+  &-title-bottom {
+    font-size: 2.2rem;
+    color: $red;
+    text-transform: uppercase;
+  }
+}
+
+/* contato */
+.contact {
+  padding: 20px;
+  background: $graybg;
+  border-radius: 4px;
+  width: 270px;
+  position: fixed;
+  top: 200px;
+  right: 50px;
+  box-shadow: 0px 0px 5px #00000029;
+  z-index: 10;
+  &-header {
+    margin-bottom: 20px;
+  }
+  &-form {
+    input,
+    select {
+      font-family: $roboto;
+      font-size: 1.4rem;
+      width: 100%;
+      background-color: $graybg;
+      border: 1px solid #00000012;
+      border-radius: 4px;
+      padding: 10px 10px 10px 40px;
+      margin-bottom: 5px;
+      &::placeholder {
+      }
+    }
+    select,
+    input::placeholder {
+      color: $graytext;
+    }
+  }
+  @media (max-width: $large) {
+    & {
+      position: relative;
+      top: unset;
+      right: unset;
+      margin: 40px auto;
+      width: 100%;
+      max-width: 940px;
+    }
+  }
+}
+
+/* inputs/select background*/
+input,
+select {
+  background-position: center left 10px;
+  background-repeat: no-repeat;
+}
+
+input[name="name"] {
+  background-image: url("../img/svg/avatar.svg");
+}
+
+input[name="email"] {
+  background-image: url("../img/svg/black-envelope.svg");
+}
+
+input[name="telefone"] {
+  background-image: url("../img/svg/call-answer.svg");
+}
+
+select[name="hour"] {
+  background-image: url("../img/svg/clock-circular-outline.svg");
+}
+
+select[name="local"] {
+  background-image: url("../img/svg/facebook-placeholder-for-locate-places-on-maps.svg");
+}
+
+/* botões */
+.green-button {
+  font-size: 1.4rem;
+  font-family: $roboto;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: $green;
+  color: $white;
+  border-radius: 4px;
+  padding: 15px 0;
+  width: 100%;
+  border: none;
+}
+
+/* titulos e textos */
+p {
+  font-size: 1.8rem;
+}
+h1 {
+  font-size: 3.4rem;
+  font-style: italic;
+  font-weight: normal;
+}
+
+@media (max-width: $small) {
+  h1 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+}

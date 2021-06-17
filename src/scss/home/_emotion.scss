@@ -1,0 +1,33 @@
+.emotion {
+  margin-bottom: 50px;
+  &-content {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      img {
+        border: 1px solid #d5d5d5;
+        height: 100px;
+        width: auto;
+      }
+    }
+  }
+  &-text {
+    font-size: 1.8rem;
+  }
+  @media (max-width: $small) {
+    &-content {
+      &-list {
+        display: none;
+      }
+    }
+    &-text {
+      text-align: center;
+    }
+  }
+}

@@ -1,4 +1,10 @@
 @import "variaveis";
 @import "global";
-@import "header";
-@import "nav";
+@import "components";
+
+/* home */
+@import "home/header";
+@import "home/nav";
+@import "home/main-banner";
+@import "home/emotion";
+@import "home/inside-banner";
