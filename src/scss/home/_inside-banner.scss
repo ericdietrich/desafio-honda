@@ -19,6 +19,13 @@
         margin-bottom: 30px;
       }
     }
+    .container {
+      height: 100%;
+      .row {
+        height: 100%;
+        align-items: flex-end;
+      }
+    }
   }
   @media (max-width: $large) {
     & {
@@ -31,6 +38,9 @@
     & {
       .inside-banner-background {
         height: 400px;
+        p {
+          text-align: center;
+        }
       }
     }
   }

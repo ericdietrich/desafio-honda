@@ -16,7 +16,7 @@
 }
 
 .slick-arrow {
-  background: #d5d5d5;
+  background: #717174;
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -25,77 +25,45 @@
   &:hover {
     background: #808080;
   }
-}
-
-.slick-next {
-  right: 20px;
-}
-.slick-next::before,
-.slick-next::after {
-  border-right: 4px solid;
-  content: "";
-  display: block;
-  height: 17px;
-  margin-top: -18px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  -moz-transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  width: 13px;
-  opacity: 1;
-  color: #fff;
-}
-.slick-next::after {
-  margin-top: -1px;
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: 14px;
-  right: 16px;
-}
-
-.slick-next.slick-disabled::after,
-.slick-prev.slick-disabled::after {
-  opacity: 0.25;
-}
-
-.slick-prev {
-  left: 20px;
-  &::before {
-    content: "";
+  &.slick-next {
+    right: 20px;
+  }
+  &.slick-prev {
+    left: 20px;
+    &::before {
+      content: "";
+    }
   }
 }
 
-.slick-prev::before,
-.slick-prev::after {
-  border-right: 4px solid;
-  content: "";
-  display: block;
-  height: 17px;
-  margin-top: -18px;
-  position: absolute;
-  -moz-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-  width: 13px;
+/* .slick-next.slick-disabled::after,
+.slick-prev.slick-disabled::after,
+.slick-next.slick-disabled::before,
+.slick-prev.slick-disabled::before {
   opacity: 1;
-  color: #fff;
-}
-.slick-prev::after {
-  margin-top: -1px;
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 20px;
-  right: 20px;
-}
+} */
+
+.slick-next::before,
 .slick-prev::before {
-  right: 13px;
-  top: 27px;
+  border-style: solid;
+  border-width: 0.2em 0.2em 0 0;
+  content: "";
+  display: inline-block;
+  height: 1em;
+  left: -0.2em;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 1em;
+  transform: rotate(45deg);
+}
+.slick-next::before {
+  left: -0.2em;
+  transform: rotate(45deg);
+}
+
+.slick-prev::before {
+  left: 0.25em;
+  transform: rotate(-135deg);
 }
