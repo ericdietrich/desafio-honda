@@ -8,7 +8,6 @@ const browsersync = require("browser-sync").create();
 const concat = require("gulp-concat");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
-var cachebust = require("gulp-cache-bust");
 
 // AUTOMAÇÃO DA TAREFA DO SCSS EM CSS
 function scssTask() {
@@ -21,20 +20,7 @@ function scssTask() {
     .pipe(browsersync.stream());
 }
 
-// function cssTask() {
-//       return src('css/**/*.css', { sourcemaps: true })
-//             .pipe(browsersync.stream())
-// }
-
-// AUTOMAÇÃO DO JAVASCRIPT
-//function jsTask() {
-//  return src("src/js/**/*.js", { sourcemaps: true })
-//   .pipe(terser())
-//    .pipe(dest("dist/js", { sourcemaps: "." }))
-//    .pipe(browsersync.stream());
-//}
-
-// AUTOMAÇÃO DAS LIBS DO JAVASCRIPT, TODAS COMPILADAS NUM ARQUIVO SÓ ALL.JS
+// AUTOMAÇÃO DO JAVASCRIPT, TODAS COMPILADAS NUM ARQUIVO SÓ ALL.JS
 function jsTask() {
   return src("src/js/**/*.js", { sourcemaps: true })
     .pipe(terser())
@@ -72,24 +58,11 @@ function watchTask() {
   );
 }
 
-function cacheBust() {
-  gulp
-    .src("dist/*/*.html")
-    .pipe(
-      cachebust({
-        type: "timestamp",
-      })
-    )
-    .pipe(gulp.dest("dist"));
-}
-
 //Tarefa padrão do gulp
 exports.default = series(
   scssTask,
-  // cssTask,
-  //jsTask,
   jsTask,
-  //imageMin,
+  imageMin,
   browsersyncServe,
   watchTask
 );
